@@ -1,0 +1,15 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "experimentalObjectRestSpread": true,
+        "jsx": true
+    }
+  },
+  "rules": {
+    "arrow-body-style": [2, "as-needed"],
+    "semi": 2,
+    "arrow-spacing": [2, { "before": true, "after": true }]
+  }
+}
