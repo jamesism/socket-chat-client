@@ -2,9 +2,11 @@
   "name": "socket-chat-client",
   "version": "1.0.0",
   "description": "A very basic web socket and redux chat client demo.",
-  "main": "src/main.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "eslint src/",
+    "build": "NODE_ENV=production webpack -p"
   },
   "author": "James Simpson",
   "license": "MIT",
@@ -13,7 +15,8 @@
     "react-dom": "^15.0.2",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2",
-    "socket.io-client": "^1.4.6"
+    "socket.io-client": "^1.4.6",
+    "socketio-wildcard": "^0.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
@@ -23,7 +26,6 @@
     "babel-preset-es2015": "^6.9.0",
     "babel-preset-react": "^6.5.0",
     "babel-preset-stage-0": "^6.5.0",
-    "classnames": "^2.2.5",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
     "html-webpack-plugin": "^2.17.0",
@@ -33,6 +35,7 @@
     "postcss-loader": "^0.9.1",
     "react-hot-loader": "^1.3.0",
     "style-loader": "^0.13.1",
+    "uglify-loader": "^1.3.0",
     "webpack": "^1.13.0",
     "webpack-dev-server": "^1.14.1"
   }

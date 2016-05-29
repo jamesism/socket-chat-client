@@ -1,0 +1,97 @@
+:global {
+	* {
+		font-family: "Helvetica-Neue", Helvetica, Arial;
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+		flex-shrink: 0;
+		list-style: none;
+		overflow: hidden;
+	}
+
+	#app {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background: #DDD;
+	}
+}
+
+.userList {
+	display: block;
+	height: 100%;
+	background: rgba(45, 106, 108, 0.83);
+	width: 20%;
+	color: #FFF;
+	padding: 1rem;
+}
+
+.scrollWrap {
+	overflow-y: scroll;
+	flex-shrink: 1;
+}
+
+.simpleInput {
+	width: 100%;
+	display: flex;
+
+	> input {
+		flex-grow: 1;
+		border: none;
+		outline: none;
+		padding: 0.5rem;
+		font-size: 1rem;
+	}
+
+	button {
+		padding: 1rem 2rem;
+		background: rgb(120, 184, 198);
+		color: #FFF;
+		border: none;
+		outline: none;
+	}
+}
+
+.messageList {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	flex-grow: 1;
+}
+
+.message {
+	padding-left: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.login {
+	h1 {
+		font-weight: 100;
+		padding: 1rem;
+	}
+
+	input {
+		font-size: 1.3rem;
+	}
+}
+
+.chatWindow {
+	width: 80%;
+	height: 80%;
+	background: rgba(255, 255, 255, 0.4);
+	display: flex;
+
+	> content {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		overflow: hidden;
+		flex-grow: 1;
+	}
+}
