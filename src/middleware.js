@@ -1,5 +1,5 @@
 import Chat from './lib/socketChat';
-import { createSocketMessage } from './chatActions';
+import { createActionFromSocket } from './actions';
 import { SOCKET_TYPE, CHAT_URL, STORAGE_KEY } from './constants';
 
 const chat = new Chat(CHAT_URL);
@@ -8,7 +8,7 @@ let storeRef = null;
 
 chat.on('*', (data, evt) => {
 	if (!storeRef) return;
-	storeRef.dispatch(createSocketMessage(evt, data));
+	storeRef.dispatch(createActionFromSocket(evt, data));
 });
 
 const socketMiddleware = store => next => action => {

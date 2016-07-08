@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
-import Chat from './Chat';
-import reducer from './chatReducer';
-import middleware from './chatMiddleware';
+import Chat from './components/Chat';
+import reducer from './reducer';
+import middleware from './middleware';
 
 // DOM Entrypoint
 const rootEl = document.getElementById('app');

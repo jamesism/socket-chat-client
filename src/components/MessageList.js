@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { findDOMNode } from 'react-dom';
 import style from '../chat.less';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export const Message = ({msg}) => (
 	<li className={style.message}>

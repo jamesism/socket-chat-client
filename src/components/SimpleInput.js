@@ -16,7 +16,6 @@ export default class SimpleInput extends Component {
 	}
 
 	handleSubmit(e) {
-		console.log("handle submit?");
 		e.preventDefault();
 		e.stopPropagation();
 		if (!this.state.value) return;

@@ -62,6 +62,6 @@ export default class Chat {
 
 		if (listeners['*']) fnList.push(...listeners['*']);
 		if (listeners[evt]) fnList.push(...listeners[evt]);
-		fnList.map(fn => fn(data, evt));
+		fnList.forEach(fn => fn(data, evt));
 	}
 }
