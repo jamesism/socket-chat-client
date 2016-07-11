@@ -33,4 +33,7 @@ const handlers = {
 	}
 };
 
-export default (state = initialState, action) => handlers[action.type] && handlers[action.type](state, action) || state;
+export default (state = initialState, action) => {
+	if (!handlers[action.type]) return state;
+	return handlers[action.type](state, action);
+};
