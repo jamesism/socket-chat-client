@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { findDOMNode } from 'react-dom';
 import style from '../chat.less';
 
-export const Message = ({msg}) => (
+const Message = ({msg}) => (
 	<li className={style.message}>
 		<label className="author">{msg.author}: </label>
 		<span className="text">{msg.text}</span>
@@ -12,22 +11,21 @@ export const Message = ({msg}) => (
 export default class MessageList extends Component {
 
 	componentDidUpdate() {
-		this.checkScroll();
+		this.setScroll();
 	}
 
 	componentDidMount() {
-		this.checkScroll();
+		this.setScroll();
 	}
 
-	checkScroll() {
-		let node = findDOMNode(this);
-		node.scrollTop = node.scrollHeight;
+	setScroll() {
+		this.refs.scroller.scrollTop = this.refs.scroller.scrollHeight;
 	}
 
 	render() {
 		let {messages} = this.props;
 		return (
-			<div className={style.scrollWrap}>
+			<div ref="scroller" className={style.scrollWrap}>
 				<ul className={style.messageList}>
 					{ messages.map(m => <Message key={m.id} msg={m} />) }
 				</ul>
