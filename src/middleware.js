@@ -11,14 +11,16 @@ chat.on('*', (data, evt) => {
 	storeRef.dispatch(createActionFromSocket(evt, data));
 });
 
-const socketMiddleware = store => next => action => {
+const socketMiddleware = store => {
 	storeRef = store;
-	if (action.type === SOCKET_TYPE) {
-		let { event, payload = {} } = action;
-		if (!event) return next(action);
-		chat.emit(event, payload);
-	}
-	return next(action);
+	return next => action => {
+		if (action.type === SOCKET_TYPE) {
+			let { event, payload = {} } = action;
+			if (!event) return next(action);
+			chat.emit(event, payload);
+		}
+		return next(action);
+	};
 };
 
 export default socketMiddleware;
